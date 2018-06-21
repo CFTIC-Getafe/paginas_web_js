@@ -1,0 +1,20 @@
+{
+  "name": "paginas_web_js",
+  "version": "1.0.0",
+  "description": "Modulo 2 del curso de Páginas Web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alce65/paginas_web_js.git"
+  },
+  "keywords": ["JavaScript", "ECMAScript"],
+  "author": "Alejandro Cerezo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alce65/paginas_web_js/issues"
+  },
+  "homepage": "https://github.com/alce65/paginas_web_js#readme"
+}
