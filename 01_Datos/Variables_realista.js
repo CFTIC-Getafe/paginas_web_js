@@ -12,14 +12,17 @@ function calcular(pTotal, pIncremento) {
 function main1() {
     let total = 12
     let incremento = 10
-    console.log(calcular(total, incremento )) //22
-    console.log(total) //12
+    console.log(calcular(total, incremento)) //22
+    console.log(total) //12 
+    let iva = 14
+    console.log('El IVA vale', iva)
 }
 main1()
 
 /* VARIABLES LOCALES con AMBITO de BLOQUE */
 
 function disminuir1() {
+    let x = 24
     if (true) {
         let local = 2
         const LOCAL = 4
@@ -27,6 +30,7 @@ function disminuir1() {
         console.log(local) // 4
         console.log(LOCAL) // 4
     }
+    x += 4
 }
 
 function disminuir2() {
@@ -45,7 +49,7 @@ function disminuir3() {
     local = 2
     const LOCAL = 4
     local -= LOCAL
-    console.log(local) // -2
+    console.log('El resultado es', local) // -2
     console.log(LOCAL) // 4
 }
 
