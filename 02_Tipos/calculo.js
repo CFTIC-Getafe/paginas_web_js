@@ -3,9 +3,9 @@ function sumar(a, b) {
     if (isNaN(a)) { resultado = "Error"}
     else if (isNaN(b)) { resultado = "Error"}
     else {
-        // resultado = Number(a) + Number(b)
+        resultado = Number(a) + Number(b)
         // resultado = +a + +b
-        resultado = parseFloat(a) + parseFloat(b)
+        // resultado = parseFloat(a) + parseFloat(b)
     }
     return resultado
 }
@@ -66,3 +66,5 @@ console.log(resultado)
 resultado = calcularModulo(num2, num1)
 console.log(resultado)
 // console.log(sumar(num1, num2))
+
+
