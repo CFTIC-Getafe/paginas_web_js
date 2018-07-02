@@ -6,6 +6,7 @@
  *  
  */
 
+
 function despertador(dia) {
     let hora = '12:00'
     switch (dia) {
@@ -30,12 +31,9 @@ function despertador(dia) {
             dia = 'Viernes'
             break;
         case 'S' :
-            hora = '12:00'
-            dia = 'Sábado'
-            break;
         case 'D':
             hora = '12:00'
-            dia = 'Domingo'  
+            dia = 'Fin de Semana'  
             break;
         default:
             hora = '0:00'
@@ -96,4 +94,41 @@ function probar () {
     console.log(`Si tu dia es ${dia}`, despertador(dia)) // 12:00
 }
 
-probar()
+
+// Ejemplo de if
+
+if (a == 26 || a == 27  || a == 65  ) {
+    // ...
+} else if (a == 45) { 
+    // ...
+}
+else if ( a == 134) {
+    // ....
+} else {
+    // ...
+}
+
+// El mismo ejemplo mediante switch
+
+switch (a) {
+    case 26:
+    case 27:
+    case 65:
+        // algo
+        break;
+    case 45:
+        // ...
+        break;
+    case 134:
+        // ...
+        break;
+    default:
+        // ...
+        break;
+}
+// más código
+
+
+let a = 'Pepe'
+let saludoOld = 'Hola ' + a
+let saludo = `Hola ${a}`
