@@ -17,9 +17,6 @@ console.log('Peréz'.toLowerCase());
 console.log('ciudades'.slice(2,5));
 console.log('ciudades'.substr(2,3));
 
-
-
-
 function capitalizar(cadena) {
     let aTexto = cadena.split(' ')
     for (let i = 0; i < aTexto.length; i++) {
