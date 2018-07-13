@@ -27,3 +27,23 @@ Modulo 2 del curso de Páginas Web
 - Operadores.js
 - Saludo.js
 - Semana.js
+- Iteraciones.js
+- Iteraciones_w.js
+- Estadistica.js
+
+## 04_Resumen
+
+- Funciones.js
+- Excepciones.js
+
+## 05_Objetos
+
+- Val_defecto.js
+- Elementales.js
+- Strings.js
+- Math.js
+- DNI.js
+- Palindromo.js
+- Array.js
+- Funciones_rev.js
+
