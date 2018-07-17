@@ -29,6 +29,12 @@ oVuelo.mostrar = function (oDatos = this) {
     }
 }
 
+// Los objetos tienen una propiedad [[Prototype]]
+// accesible con Object.getPrototypeOf() 
+
+console.log('prototype: ', Object.getPrototypeOf( oVuelo ))
+
+
 // Objetos creados mediante Object.create
 // Implementación en ES5 del patrón de 
 // herencia prototípica (prototypical inheritance)
@@ -41,15 +47,15 @@ console.log('type; ', typeof oVuelo1)
 console.log('¿Instancia de Object? ', oVuelo instanceof Object);
 
 // inspect the object sub-type
-console.log('prototype type: ', Object.prototype.toString.call( oVuelo1 ))
+//console.log('prototype type: ', Object.prototype.toString.call( oVuelo1 ))
 console.log('prototype: ', Object.getPrototypeOf( oVuelo1 ))
-console.log('prototype constructor: ', Object.prototype.constructor)
-
+//console.log('prototype constructor: ', Object.prototype.constructor)
+ 
 
 
 // modificando una propiedad que existe en el prototipo : shadowing
 oVuelo1.airline = "Iberia"
-console.dir(oVuelo1)
+console.dir(oVuelo1) 
 
 // Objeto clonado mediante Object.assign
 let oVuelo2 = {}
