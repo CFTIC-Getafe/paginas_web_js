@@ -10,14 +10,22 @@ function Elemento (descripcion, precio, cantidad) {
     this.cantidad = cantidad
 }
 
-function Factura (empresa, tipoIVA, formaPago) {
-    this.empresa = empresa
+function Factura (tipoIVA, formaPago) {
     this.cliente = ''
     this.elementos = []
     this.importeTotal = 0
     this.tipoIVA = tipoIVA
     this.formaPago = formaPago
-    this.calculaImporteTotal = function() {
+}
+
+Factura.prototype.mostrar = function() {
+    // muestre por pantalla el importe total 
+    // de la factura en un formato HTML adecuado.
+        this.calculaImporteTotal()
+        this.pintaDatos()
+    }
+
+Factura.prototype.calculaImporteTotal = function() {
     // actualice el valor de la propiedad correspondiente
         this.importeTotal = 0
         this.elementos.forEach(
@@ -27,37 +35,40 @@ function Factura (empresa, tipoIVA, formaPago) {
             }
         )
     }
-    this.mostrar = function() {
-    // muestre por pantalla el importe total 
-    // de la factura en un formato HTML adecuado.
-        this.calculaImporteTotal()
-        this.pintaDatos()
-    }
-    this.pintaDatos = function(oDatos = this) {
-        for (const key in oDatos) {
-            if (oDatos.hasOwnProperty(key) && (typeof oDatos[key] !== 'function')) {
-                if (typeof oDatos[key] === 'object') { 
-                    if (isNaN(key)) {
-                        console.log(`Propiedades de ${key}: `)
-                    }
-                    this.pintaDatos(oDatos[key])
-                } else {
-                    console.log(`${key} : ${oDatos[key]}`)
-                }    
+
+Factura.prototype.pintaDatos = function(oDatos = this) {
+    for (const key in oDatos) {
+        if ((typeof oDatos[key] !== 'function')) {
+            if (typeof oDatos[key] === 'object') { 
+                if (isNaN(key)) {
+                    console.log(`Propiedades de ${key}: `)
+                }
+                this.pintaDatos(oDatos[key])
+            } else {
+                console.log(`${key} : ${oDatos[key]}`)
             }    
-        }
+        }    
     }
 }
 
+Factura.prototype.empresa =  new Empresa(
+    'Boracay Ediciones',
+    'c/ Pez',
+    '587 349 785',
+    'Z-345123876')
+Factura.prototype.ivaBase = '1.16'
+// console.log(Factura.prototype)
+
 function crearFactura1() {
-    let factura1 = new Factura(
-        new Empresa(
-            'Boracay Ediciones',
-            'c/ Pez',
-            '587 349 785',
-            'Z-345123876'), 
+    let factura1 = new Factura( 
         1.04, 
-        'contado' ) 
+        'contado') 
+
+    factura1.empresa = new Empresa(
+        'Ediciones Alpiste',
+        'c/ Piolin',
+        '587 349 785',
+        'Z-345123876')
 
     factura1.cliente = 
         new Empresa(
@@ -79,20 +90,11 @@ function crearFactura1() {
         new Elemento ('El Señor de loas Anillos', 50, 24)
     )
 
-    //factura1.mostrar()
-
-    factura1.tipo = "Tipo C"
-
-    console.log(factura1)
+    factura1.mostrar()
 }
 
 function crearFactura2() {
-    let factura1 = new Factura(
-        new Empresa(
-            'Boracay Ediciones',
-            'c/ Pez',
-            '587 349 785',
-            'Z-345123876'), 
+    let factura1 = new Factura( 
         1.04, 
         'transferencia' ) 
 
@@ -116,10 +118,11 @@ function crearFactura2() {
         new Elemento ('El Hobbit', 50, 24)
     )
 
-    // factura1.mostrar()    
-    console.log(factura1)
+    factura1.mostrar()    
+    //console.log(factura1)
 }
 
-
 crearFactura1()
-// crearFactura2()
+crearFactura2()
+
+
