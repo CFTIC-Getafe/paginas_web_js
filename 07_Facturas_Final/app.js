@@ -14,6 +14,7 @@ function crearFactura1() {
         '587 349 785',
         'Z-345123876')
 
+    factura1.cliente = "Pepe"     
     /* factura1.cliente = 
         new Empresa(
             'Libreria Tuatalug',
