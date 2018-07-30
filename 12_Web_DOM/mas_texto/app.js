@@ -4,6 +4,10 @@ class App {
         this.aBtnMas.forEach(
             (btn) => {btn.addEventListener('click', this.mostrar.bind(this))}
         )
+        /* for (let i = 0; i < this.aBtnMas.length; i++) {
+            const item = this.aBtnMas[i]
+            item.addEventListener('click', this.mostrar.bind(this))
+        } */
     }
 
     mostrar(oE) {  
