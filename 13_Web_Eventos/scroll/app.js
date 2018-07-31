@@ -38,7 +38,14 @@ class App {
     }
 
     subir(oE) {
-        document.scrollingElement.scrollTop = 0
+        //document.scrollingElement.scrollTop = 0
+        //location.assign()
+        //location.href = "#"
+        window.scroll({
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth'
+        })
     }
 }
 
