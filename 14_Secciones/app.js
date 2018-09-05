@@ -11,6 +11,10 @@ class App {
         document.addEventListener('scroll', 
             this.scrollDetect.bind(this) 
         )
+
+        window.addEventListener('resize', () =>{
+           this.calcularOffsets()
+        })
         
         this.aNodosMenu.forEach(
             (nodoMenu) => {nodoMenu.addEventListener('click',
@@ -61,6 +65,7 @@ class App {
     }
 
     calcularOffsets() {
+        this.aOffset = []
         this.aNodosSection.forEach(
             (section) => {
                 this.aOffset.push(section.offsetTop-60)
